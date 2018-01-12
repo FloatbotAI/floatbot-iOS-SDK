@@ -1,0 +1,6 @@
+framework module floatbot {
+  umbrella header "floatbot.h"
+
+  export *
+  module * { export * }
+}
