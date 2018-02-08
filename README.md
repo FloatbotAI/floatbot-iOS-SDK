@@ -30,6 +30,6 @@ You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashbo
 # Getting Started
   Visit https://floatbot.ai/developers
   
-# Opensource libraries used
+# Open source libraries used
 •	SDWebImage
 
