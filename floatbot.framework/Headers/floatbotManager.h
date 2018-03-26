@@ -30,6 +30,25 @@
  */
 @property (nonatomic, retain) NSString *BOT_NAME;
 
+/**
+    Sets incoming message bubble color
+ */
+@property (nonatomic, retain) UIColor *incomingMessageBubbleColor;
+/**
+ Sets outgoing message bubble color
+ */
+@property (nonatomic, retain) UIColor *outgoingMessageBubbleColor;
+
+/**
+ Sets incoming message text color
+ */
+@property (nonatomic, retain) UIColor *incomingMessageTextColor;
+/**
+ Sets outgoing message text color
+ */
+@property (nonatomic, retain) UIColor *outgoingMessageTextColor;
+
+
 + (id)sharedManager;
 /**
     Prints string passed on the console area
