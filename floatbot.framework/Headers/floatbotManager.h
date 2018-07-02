@@ -29,7 +29,6 @@
     Sets the name of the chatbot to display on floatbot chat window
  */
 @property (nonatomic, retain) NSString *BOT_NAME;
-
 /**
     Sets incoming message bubble color
  */
@@ -47,7 +46,22 @@
  Sets outgoing message text color
  */
 @property (nonatomic, retain) UIColor *outgoingMessageTextColor;
-
+/**
+ Sets bot theme
+ */
+@property (nonatomic, retain) UIColor *botThemeColor;
+/**
+ Sets bot theme
+ */
+@property (nonatomic, retain) UIColor *themeLabelColor;
+/**
+ Determines wheather to show session lists or not
+ */
+@property (nonatomic) BOOL showSessionList;
+/**
+ Sets hash
+ */
+@property (nonatomic, retain) NSString *hash;
 
 + (id)sharedManager;
 /**
@@ -70,5 +84,10 @@
     Opens new floatbot chat window on the UIViewController passed as an arguement
  */
 + (void)startChatWithViewController:(UIViewController *)viewC;
-@end
+/**
+    Lets the SDK know when app is launched
+ */
++ (void)appLaunched;
 
+
+@end
