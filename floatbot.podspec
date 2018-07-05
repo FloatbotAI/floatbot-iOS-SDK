@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "floatbot"
-  s.version      = "0.0.03"
+  s.version      = "0.0.08"
   s.summary      = "Integrates floatbot with the iOS app."
 
   s.description  = <<-DESC
@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, "8.0"
   s.ios.deployment_target = '8.0'
   s.dependency "SDWebImage"
+  s.dependency "AFNetworking"
   s.vendored_frameworks = "floatbot.framework"
   s.resource  = "flbAssets.bundle"
 
