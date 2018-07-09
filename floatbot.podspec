@@ -15,11 +15,11 @@ Pod::Spec.new do |s|
   s.author = { "Jhanvi" => "jhanvi@jpctechnologies.net" }
   s.platform = :ios, "8.0"
   s.ios.deployment_target = '8.0'
+  s.resource  = "flbAssets.bundle"
   s.dependency "SDWebImage"
   s.dependency "AFNetworking"
   s.vendored_frameworks = "floatbot.framework"
-  s.resource  = "flbAssets.bundle"
-
+  #s.resource_bundle = "flbAssets.bundle"
 end
 
 
