@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
   s.dependency "SDWebImage"
   s.dependency "AFNetworking"
   s.vendored_frameworks = "floatbot.framework"
-  #s.resource_bundle = "flbAssets.bundle"
 end
 
 
