@@ -13,12 +13,12 @@ You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashbo
 # Requirements
 
 • Xcode 9.0
-
 •	iOS 8.0+
 
 # Dependencies
 
 •	SDWebImage
+•	AFNetworking
 
 # Installation
 
