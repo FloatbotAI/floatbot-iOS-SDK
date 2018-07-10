@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "floatbot"
-  s.version      = "0.0.09"
+  s.version      = "0.0.10"
   s.summary      = "Integrates floatbot with the iOS app."
 
   s.description  = <<-DESC
