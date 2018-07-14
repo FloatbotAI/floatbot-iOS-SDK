@@ -117,5 +117,14 @@ You can customize the chat screen using following optional methods
     [[floatbotManager sharedManager] setOutgoingMessageTextColor:[UIColor redColor]];
 
 
+## Example 
+
+You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-example)
+
+## Get in touch
+
+Email : contact@floatbot.ai
+
+
 
 
