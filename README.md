@@ -58,11 +58,11 @@ You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashbo
 
 • To set the chatbot ID, use
 
-	  [[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
+	[[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
     
 • To set the chatbot token/key, use
 
-    [[floatbotManager sharedManager] setFLB_KEY:KEY];
+	[[floatbotManager sharedManager] setFLB_KEY:KEY];
 
 • To set the chatbot name, use
 
@@ -105,16 +105,15 @@ You can customize the chat screen using following optional methods
 
 2) To set outgoing message bubble background color
 
-        [[floatbotManager sharedManager] setOutgoingMessageBubbleColor:[UIColor redColor]];
-
+	[[floatbotManager sharedManager] setOutgoingMessageBubbleColor:[UIColor redColor]];
 
 3) To set incoming message text color
 
-        [[floatbotManager sharedManager] setIncomingMessageTextColor:[UIColor redColor]];
+	[[floatbotManager sharedManager] setIncomingMessageTextColor:[UIColor redColor]];
 
 4) To set outgoing message text color
 
-        [[floatbotManager sharedManager] setOutgoingMessageTextColor:[UIColor redColor]];
+	[[floatbotManager sharedManager] setOutgoingMessageTextColor:[UIColor redColor]];
 
 
 ## Example 
@@ -163,7 +162,7 @@ Follow the simple steps to integrate floatbot SDK to your iOS app
 
 Step 1: Import “floatbot.h” in AppDelegate.m
 
-	  #import <floatbot/floatbot.h>
+	#import <floatbot/floatbot.h>
 
 Step 2: Initialize and configure floatbot for your app.
 
@@ -180,7 +179,7 @@ The above method will set the name of your bot in the app, which will be display
 
 To initialize user and load chat screen, add the following method (i.e. onButtonClick or when app launches or after user is validated), Pass UIViewController object as input parameter
 
-		[floatbotManager startChatWithViewController:self];
+	[floatbotManager startChatWithViewController:self];
 
 Step 3: Handle Push notification
 To enable floatbot to send push notifications to the application, add this implementation of - application:didRegisterForRemoteNotificationsWithDeviceToken: in your AppDelegate file that captures the device token and sends it to floatbot server
