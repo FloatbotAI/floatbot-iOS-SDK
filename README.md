@@ -171,43 +171,39 @@ Step 2: Initialize and configure floatbot for your app.
 
 In -[AppDelegate application:didFinishLaunchingWithOptions:] method add following required methods to configure bot,
 	
-   	  [floatbotManager appLaunched];
-	  [[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
-      	  [[floatbotManager sharedManager] setFLB_KEY:KEY];
-   	  [[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
+		[floatbotManager appLaunched];
+		[[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
+		[[floatbotManager sharedManager] setFLB_KEY:KEY];
+		[[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
 
 The above method will set the name of your bot in the app, which will be displayed on the top of chat screen.
 
 To initialize user and load chat screen, add the following method (i.e. onButtonClick or when app launches or after user is validated), Pass UIViewController object as input parameter
 
-	  [floatbotManager startChatWithViewController:self];
+		[floatbotManager startChatWithViewController:self];
 
 Step 3: Handle Push notification
 To enable floatbot to send push notifications to the application, add this implementation of - application:didRegisterForRemoteNotificationsWithDeviceToken: in your AppDelegate file that captures the device token and sends it to floatbot server
 
 Add below snippet in -[AppDelegate application:didFinishLaunchingWithOptions:] method 
 
-if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")){
-        UIUserNotificationSettings *settings =
-        [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    else{
-        
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    }
+		if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+			UIUserNotificationSettings *settings =
+			[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+			[[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+			[[UIApplication sharedApplication] registerForRemoteNotifications];
+		}
+		else{
+			[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+		}
 
 To set push token, add following method
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{ 
-   	 [floatbotManager setToken:deviceToken];
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
+		[floatbotManager setToken:deviceToken];
 }
 
 
 ## Get in touch
 
 Email : contact@floatbot.ai
-
-
-
-
