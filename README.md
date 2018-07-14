@@ -15,7 +15,7 @@ SDK allows the iOS app to integrate with [floatbot.ai](http://floatbot.ai) for i
 
 • Token/Key
 
-You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashboard/login
+You can get Bot_ID and Token for your app from [Floatbot dashboard](https://floatbot.ai/portal/dashboard/login)
 
 # Requirements
 
