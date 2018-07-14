@@ -137,9 +137,14 @@ You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-exam
      Add Cloudkit.framework in Link Binary with Libraries. 
      Enable iCloud Documents with Xcode, from tab Capabilities.
 
+<p align="center"><img src="https://floatbot.ai/images/android/capabilites.png" alt="SlackKit" width="500"/></p>
+
 3) Enable Background mode for Push notification 
 	
     Enable Push notification with Xcode, from tab Capabilities.
+
+<p align="center"><img src="https://floatbot.ai/images/android/pushnotification.png" alt="SlackKit" width="500"/></p>
+
 
 #### Uploading your App’s SSL Push Certificate
 
