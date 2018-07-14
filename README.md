@@ -125,8 +125,8 @@ You can customize the chat screen using following optional methods
 
 	Starting iOS 10, Apple requires developers to declare access to privacy-sensitive controls ahead of time. 
  
-	To comply with this new privacy requirement, developers must add the required keys to the Info.plist: 
-	Warning! Failing this iOS 10 will exit the app by crashing when user tries to access the photo library to save images.
+To comply with this new privacy requirement, developers must add the required keys to the Info.plist: 
+Warning! Failing this iOS 10 will exit the app by crashing when user tries to access the photo library to save images.
 
 2) Enable iCloud Capabilities to share files
 
@@ -166,7 +166,7 @@ Step 1: Import “floatbot.h” in AppDelegate.m
 
 Step 2: Initialize and configure floatbot for your app.
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+	#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 In -[AppDelegate application:didFinishLaunchingWithOptions:] method add following required methods to configure bot,
 	
