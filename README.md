@@ -20,6 +20,8 @@ You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashbo
 
 •	SDWebImage
 
+•      AFNetworking
+
 # Installation
 
   CocoaPods (recommended)
