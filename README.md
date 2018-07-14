@@ -45,8 +45,11 @@ You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashbo
 
   Step 4 : Open your project using the generated *.xcworkspace file.
 
-# Getting Started
-  Visit https://floatbot.ai/developers
+# Example 
+
+You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-example)
+
+Visit https://floatbot.ai/developers
 
 ## Usage
 ### The Basics
@@ -109,11 +112,6 @@ You can customize the chat screen using following optional methods
 4) To set outgoing message text color
 
 	[[floatbotManager sharedManager] setOutgoingMessageTextColor:[UIColor redColor]];
-
-
-## Example 
-
-You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-example)
 
 ## Getting started
 
