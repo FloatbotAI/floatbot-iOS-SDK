@@ -7,9 +7,7 @@
 
 
 # Description
-SDK allows the iOS app to integrate with floatbot.ai for iPhone and iPad devices
-
-[About Floatbot](http://floatbot.ai)
+SDK allows the iOS app to integrate with [floatbot.ai](http://floatbot.ai) for iPhone and iPad devices
 
 # Prerequisite
 
