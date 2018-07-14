@@ -1,6 +1,3 @@
-
-
-
 <p align="center"><img src="https://floatbot.ai/portal/asset/img/icons/floatbot.png" alt="SlackKit" width="500"/></p>
 
 ![Swift Version](https://img.shields.io/badge/Swift-4.0.3-orange.svg)
@@ -155,6 +152,8 @@ You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-exam
 To generate APNS certificate refer this : https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html
 
 Upload your development / production certificate in Settings page.
+
+<p align="center"><img src="https://floatbot.ai/images/website/ChatBot%20Setting1%20%20%20Floatbot.png" alt="SlackKit" width="500"/></p>
 
 ### Importing framework
 
