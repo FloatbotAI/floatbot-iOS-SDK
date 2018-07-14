@@ -123,7 +123,7 @@ You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-exam
 
 ## Getting started
 
-#### Configure your project
+### Configure your project
 
 1) Add following key to your Info.plist file with appropriate message for  iOS 10 Compatibility:  
 
@@ -145,10 +145,10 @@ You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-exam
 	
     Enable Push notification with Xcode, from tab Capabilities.
 
- #### Uploading your App’s SSL Push Certificate
+#### Uploading your App’s SSL Push Certificate
 
 1. Go to the Mac OS finder application, and search for “Keychain Access”. Open it.  
-2. Find your App’s push certificate in the Certificates section. It will start with the string “"Apple Development iOS Push Services" (“Apple Production iOS push services” in case of production certificate)  
+2. Find your App’s push certificate in the Certificates section. It will start with the string "Apple Development iOS Push Services" (Apple Production iOS push services” in case of production certificate)  
 3. Expand the row, and you will find the private key.  
 4. Select both the private key and certificate and export it as .p12 file and necessarily set a password. 
 5. Upload the saved .p12 file in the field below selecting development environment or production environment depending on whether you are using it for dev or production push services.
@@ -156,6 +156,53 @@ You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-exam
 To generate APNS certificate refer this : https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html
 
 Upload your development / production certificate in Settings page.
+
+### Importing framework
+
+Follow the simple steps to integrate floatbot SDK to your iOS app
+
+Step 1: Import “floatbot.h” in AppDelegate.m
+
+	  #import <floatbot/floatbot.h>
+
+Step 2: Initialize and configure floatbot for your app.
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+In -[AppDelegate application:didFinishLaunchingWithOptions:] method add following required methods to configure bot,
+	
+   	  [floatbotManager appLaunched];
+	  [[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
+      	  [[floatbotManager sharedManager] setFLB_KEY:KEY];
+   	  [[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
+
+The above method will set the name of your bot in the app, which will be displayed on the top of chat screen.
+
+To initialize user and load chat screen, add the following method (i.e. onButtonClick or when app launches or after user is validated), Pass UIViewController object as input parameter
+
+	  [floatbotManager startChatWithViewController:self];
+
+Step 3: Handle Push notification
+To enable floatbot to send push notifications to the application, add this implementation of - application:didRegisterForRemoteNotificationsWithDeviceToken: in your AppDelegate file that captures the device token and sends it to floatbot server
+
+Add below snippet in -[AppDelegate application:didFinishLaunchingWithOptions:] method 
+
+if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")){
+        UIUserNotificationSettings *settings =
+        [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else{
+        
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    }
+
+To set push token, add following method
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{ 
+   	 [floatbotManager setToken:deviceToken];
+}
+
 
 ## Get in touch
 
