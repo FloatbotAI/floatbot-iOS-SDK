@@ -12,9 +12,6 @@
 {
     BOOL isZOROUser;
 }
-
-@property (nonatomic) BOOL AsRootViewController;
-
 @property (nonatomic) BOOL isZOROUser;
 /**
     Sets floatbot-key of chatbot
