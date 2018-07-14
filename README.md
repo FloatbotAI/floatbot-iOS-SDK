@@ -121,6 +121,42 @@ You can customize the chat screen using following optional methods
 
 You can find the demo app [Here](https://github.com/FloatbotAI/floatbot-iOS-example)
 
+## Getting started
+
+#### Configure your project
+
+1) Add following key to your Info.plist file with appropriate message for  iOS 10 Compatibility:  
+
+	• NSPhotoLibraryUsageDescription : Specify the reason for your app to get read-only access to the user’s photo library (To upload files from device)
+
+	• NSPhotoLibraryAddUsageDescription : Specify the reason for your app to get write-only access to the user’s photo library (To download the image to device)
+
+	Starting iOS 10, Apple requires developers to declare access to privacy-sensitive controls ahead of time. 
+ 
+	To comply with this new privacy requirement, developers must add the required keys to the Info.plist: 
+	Warning! Failing this iOS 10 will exit the app by crashing when user tries to access the photo library to save images.
+
+2) Enable iCloud Capabilities to share files
+
+     Add Cloudkit.framework in Link Binary with Libraries. 
+     Enable iCloud Documents with Xcode, from tab Capabilities.
+
+3) Enable Background mode for Push notification 
+	
+    Enable Push notification with Xcode, from tab Capabilities.
+
+ #### Uploading your App’s SSL Push Certificate
+
+1. Go to the Mac OS finder application, and search for “Keychain Access”. Open it.  
+2. Find your App’s push certificate in the Certificates section. It will start with the string “"Apple Development iOS Push Services" (“Apple Production iOS push services” in case of production certificate)  
+3. Expand the row, and you will find the private key.  
+4. Select both the private key and certificate and export it as .p12 file and necessarily set a password. 
+5. Upload the saved .p12 file in the field below selecting development environment or production environment depending on whether you are using it for dev or production push services.
+
+To generate APNS certificate refer this : https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html
+
+Upload your development / production certificate in Settings page.
+
 ## Get in touch
 
 Email : contact@floatbot.ai
