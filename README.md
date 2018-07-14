@@ -46,5 +46,40 @@ You can get Bot_ID and Token for your app from https://floatbot.ai/portal/dashbo
     For latest release in cocoapods
     pod 'floatbot'
 
+  Step 3 : Run pod pod repo update && pod install
+
+  Step 4 : Open your project using the generated *.xcworkspace file.
+
 # Getting Started
   Visit https://floatbot.ai/developers
+
+## Usage
+### The Basics
+
+● To set the chatbot ID, use
+
+	  [[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
+    
+● To set the chatbot token/key, use
+
+    [[floatbotManager sharedManager] setFLB_KEY:KEY];
+
+● To set the chatbot name, use
+
+   	[[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
+
+● To display sessions list, add following optional method 
+
+  	[[floatbotManager sharedManager] setShowSessionList:YES/NO];
+
+  This will take user directly to chat screen if value passed is NO
+
+● Optionally, you can set the mobile number of the user to identify the user.
+Note: PHONE_NO passed to above method should be the number prefixed with the country code and without “+”.Ex. 9110000001 
+
+    [[floatbotManager sharedManager] setPHONE_NUMBER_WITH_COUNTRY_CODE:PHONE_NO];
+
+
+
+
+
