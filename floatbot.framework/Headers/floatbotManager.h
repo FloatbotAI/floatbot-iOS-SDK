@@ -12,6 +12,9 @@
 {
     BOOL isZOROUser;
 }
+
+@property (nonatomic) BOOL AsRootViewController;
+
 @property (nonatomic) BOOL isZOROUser;
 /**
     Sets floatbot-key of chatbot
@@ -62,6 +65,10 @@
  Sets hash
  */
 @property (nonatomic, retain) NSString *hash;
+/**
+ Sets google maps key for the app for sending location to floatbot
+ */
+@property (nonatomic, retain) NSString *googleMapsKey;
 
 + (id)sharedManager;
 /**

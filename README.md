@@ -56,42 +56,42 @@ Visit https://floatbot.ai/developers
 
 • To set the chatbot ID, use
 
-[[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
+    [[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
 
 • To set the chatbot token/key, use
 
-[[floatbotManager sharedManager] setFLB_KEY:KEY];
+    [[floatbotManager sharedManager] setFLB_KEY:KEY];
 
 • To set the chatbot name, use
 
-[[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
+    [[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
 
 • To display sessions list, add following optional method 
 
-[[floatbotManager sharedManager] setShowSessionList:YES/NO];
+    [[floatbotManager sharedManager] setShowSessionList:YES/NO];
 
 This will take user directly to chat screen if value passed is NO
 
 • Optionally, you can set the mobile number of the user to identify the user.
 Note: PHONE_NO passed to above method should be the number prefixed with the country code and without “+”.Ex. 9110000001 
 
-[[floatbotManager sharedManager] setPHONE_NUMBER_WITH_COUNTRY_CODE:PHONE_NO];
+    [[floatbotManager sharedManager] setPHONE_NUMBER_WITH_COUNTRY_CODE:PHONE_NO];
 
 • To set the hash value for each user, add following method
 
-[[floatbotManager sharedManager] setHash:hashString];
+    [[floatbotManager sharedManager] setHash:hashString];
 
 • To initialize user and load chat screen, add the following method (i.e. onButtonClick or when app launches or after user is validated), Pass UIViewController object as input parameter
 
-[floatbotManager startChatWithViewController:self];
+    [floatbotManager startChatWithViewController:self];
 
 • To set chat screen as root view controller, use
 
-[[floatbotManager sharedManager] setAsRootViewController:TRUE];
+    [[floatbotManager sharedManager] setAsRootViewController:TRUE];
 
 • To send APNS token to floatbot server to receive push notification, use
 
-[floatbotManager setToken:deviceToken];
+    [floatbotManager setToken:deviceToken];
 
 ### Theme customization
 
@@ -99,19 +99,19 @@ You can customize the chat screen using following optional methods
 
 1) To set incoming message bubble background color
 
-[[floatbotManager sharedManager] setIncomingMessageBubbleColor:[UIColor redColor]];
+        [[floatbotManager sharedManager] setIncomingMessageBubbleColor:[UIColor redColor]];
 
 2) To set outgoing message bubble background color
 
-[[floatbotManager sharedManager] setOutgoingMessageBubbleColor:[UIColor redColor]];
+        [[floatbotManager sharedManager] setOutgoingMessageBubbleColor:[UIColor redColor]];
 
 3) To set incoming message text color
 
-[[floatbotManager sharedManager] setIncomingMessageTextColor:[UIColor redColor]];
+        [[floatbotManager sharedManager] setIncomingMessageTextColor:[UIColor redColor]];
 
 4) To set outgoing message text color
 
-[[floatbotManager sharedManager] setOutgoingMessageTextColor:[UIColor redColor]];
+        [[floatbotManager sharedManager] setOutgoingMessageTextColor:[UIColor redColor]];
 
 ## Getting started
 
@@ -162,44 +162,45 @@ Follow the simple steps to integrate floatbot SDK to your iOS app
 
 Step 1: Import “floatbot.h” in AppDelegate.m
 
-#import <floatbot/floatbot.h>
+    #import <floatbot/floatbot.h>
 
 Step 2: Initialize and configure floatbot for your app.
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+    #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 In -[AppDelegate application:didFinishLaunchingWithOptions:] method add following required methods to configure bot,
 
-[floatbotManager appLaunched];
-[[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
-[[floatbotManager sharedManager] setFLB_KEY:KEY];
-[[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
+    [floatbotManager appLaunched];
+    [[floatbotManager sharedManager] setFLB_BOT_ID:BOT_ID];
+    [[floatbotManager sharedManager] setFLB_KEY:KEY];
+    [[floatbotManager sharedManager] setBOT_NAME:BOT_NAME];
 
 The above method will set the name of your bot in the app, which will be displayed on the top of chat screen.
 
 To initialize user and load chat screen, add the following method (i.e. onButtonClick or when app launches or after user is validated), Pass UIViewController object as input parameter
 
-[floatbotManager startChatWithViewController:self];
+    [floatbotManager startChatWithViewController:self];
 
 Step 3: Handle Push notification
+
 To enable floatbot to send push notifications to the application, add this implementation of - application:didRegisterForRemoteNotificationsWithDeviceToken: in your AppDelegate file that captures the device token and sends it to floatbot server
 
 Add below snippet in -[AppDelegate application:didFinishLaunchingWithOptions:] method 
 
-if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
-UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
-[[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-[[UIApplication sharedApplication] registerForRemoteNotifications];
-}
-else{
-[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-}
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+      UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+      [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+      [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else{
+      [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    }
 
 To set push token, add following method
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
-[floatbotManager setToken:deviceToken];
-}
+    - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
+        [floatbotManager setToken:deviceToken];
+    }
 
 
 ## Get in touch
