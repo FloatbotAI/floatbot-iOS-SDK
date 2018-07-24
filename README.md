@@ -89,9 +89,20 @@ Note: PHONE_NO passed to above method should be the number prefixed with the cou
 
     [[floatbotManager sharedManager] setAsRootViewController:TRUE];
 
-• To send APNS token to floatbot server to receive push notification, use
+• To send APNS token to floatbot server to receive push notification, add following method in your project's -[AppDelegate application:didFinishLaunchingWithOptions:]  method
 
     [floatbotManager setToken:deviceToken];
+
+• To set google map API key for your app to use the location functinality of floatbot.ai, add following optional method in your project's -[AppDelegate application:didFinishLaunchingWithOptions:]  method
+
+    [[floatbotManager sharedManager] setGoogleMapsKey:YOUR_MAP_API_KEY];
+    
+    
+##### How to get google maps API key
+    
+    Refer [this](https://developers.google.com/maps/documentation/ios-sdk/get-api-key)
+    
+##### NOTE: Don't forget to enable 1) Maps 2) Places both.  
 
 ### Theme customization
 
@@ -120,6 +131,8 @@ You can customize the chat screen using following optional methods
 1) Add following key to your Info.plist file with appropriate message for  iOS 10 Compatibility:  
 
 • NSPhotoLibraryUsageDescription : Specify the reason for your app to get read-only access to the user’s photo library (To upload files from device)
+
+• NSLocationWhenInUseUsageDescription : Specify the reason for your app to get user’s location
 
 • NSPhotoLibraryAddUsageDescription : Specify the reason for your app to get write-only access to the user’s photo library (To download the image to device)
 
@@ -180,6 +193,7 @@ The above method will set the name of your bot in the app, which will be display
 To initialize user and load chat screen, add the following method (i.e. onButtonClick or when app launches or after user is validated), Pass UIViewController object as input parameter
 
     [floatbotManager startChatWithViewController:self];
+    
 
 Step 3: Handle Push notification
 
