@@ -41,7 +41,8 @@ Step 2 : Add the floatbot in Podfile under your desired target:
 For latest release in cocoapods
 pod 'floatbot'
 
-Step 3 : Run pod pod repo update && pod install
+Step 3 : Run 
+        pod repo update && pod install
 
 Step 4 : Open your project using the generated *.xcworkspace file.
 
@@ -100,7 +101,7 @@ Note: PHONE_NO passed to above method should be the number prefixed with the cou
     
 ##### How to get google maps API key
     
-    Refer [this](https://developers.google.com/maps/documentation/ios-sdk/get-api-key)
+        Refer [this](https://developers.google.com/maps/documentation/ios-sdk/get-api-key)
     
 ##### NOTE: Don't forget to enable 1) Maps 2) Places both.  
 
