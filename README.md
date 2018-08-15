@@ -19,9 +19,9 @@ You can get Bot_ID and Token for your app from [floatbot.ai dashboard](https://f
 
 # Requirements
 
-• Xcode 9.0
+• Building with Xcode 9 is required, which adds support for iPhone X and iOS 11.
 
-•    iOS 8.0+
+• Supports iOS 8, iOS 9, iOS 10 and iOS 11.
 
 # Dependencies
 
@@ -37,11 +37,13 @@ For Cocoa Pods Integration
 Step 1 : Create a Podfile in your project's root directory, if it doesn't exist yet
 
 Step 2 : Add the floatbot in Podfile under your desired target:
+         For latest release in cocoapods
 
-For latest release in cocoapods
-pod 'floatbot'
+         target :YourTargetName do
+                pod 'floatbot'
 
 Step 3 : Run 
+        
         pod repo update && pod install
 
 Step 4 : Open your project using the generated *.xcworkspace file.
@@ -101,9 +103,7 @@ Note: PHONE_NO passed to above method should be the number prefixed with the cou
     
 ##### How to get google maps API key
     
-        Refer [this](https://developers.google.com/maps/documentation/ios-sdk/get-api-key)
-    
-##### NOTE: Don't forget to enable 1) Maps 2) Places both.  
+Refer [this](https://developers.google.com/maps/documentation/ios-sdk/get-api-key)  
 
 ### Theme customization
 
@@ -139,7 +139,8 @@ You can customize the chat screen using following optional methods
 
 Starting iOS 10, Apple requires developers to declare access to privacy-sensitive controls ahead of time. 
 
-To comply with this new privacy requirement, developers must add the required keys to the Info.plist: 
+To comply with [Apple's new privacy requirement](https://developer.apple.com/library/content/qa/qa1937/_index.html), developers must add the required keys to the Info.plist: 
+
 Warning! Failing this iOS 10 will exit the app by crashing when user tries to access the photo library to save images.
 
 2) Enable iCloud Capabilities to share files
@@ -220,4 +221,5 @@ To set push token, add following method
 
 ## Get in touch
 
+For any queries, email us.
 Email : contact@floatbot.ai
